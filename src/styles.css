@@ -1,0 +1,166 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-danger: var(--danger);
+  --color-warning: var(--warning);
+  --color-subtext: var(--subtext);
+  --color-surface: var(--surface);
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.625rem;
+  /* VERIFICA dark theme (always-on dark). Colors mapped for a premium, professional cybersecurity aesthetic. */
+  --background: oklch(0.13 0.02 270);           /* Deep Obsidian / Space Blue */
+  --foreground: oklch(0.98 0.01 270);           /* Crisp White with slight blue tint */
+  --surface: oklch(0.18 0.02 270);              /* Elevated surface */
+  --card: oklch(0.18 0.02 270);
+  --card-foreground: oklch(0.98 0.01 270);
+  --popover: oklch(0.18 0.02 270);
+  --popover-foreground: oklch(0.98 0.01 270);
+  --primary: oklch(0.62 0.20 255);              /* Vibrant Trust Blue */
+  --primary-foreground: oklch(0.98 0.01 270);
+  --secondary: oklch(0.65 0.15 210);            /* Sleek Teal / Cyan */
+  --secondary-foreground: oklch(0.98 0.01 270);
+  --muted: oklch(0.24 0.03 270);
+  --muted-foreground: oklch(0.70 0.03 270);     /* Soft Gray-Blue */
+  --subtext: oklch(0.70 0.03 270);
+  --accent: oklch(0.62 0.20 255 / 0.15);
+  --accent-foreground: oklch(0.80 0.15 255);
+  --destructive: oklch(0.60 0.20 20);           /* Elegant Red */
+  --destructive-foreground: oklch(0.98 0.01 270);
+  --danger: oklch(0.60 0.20 20);
+  --warning: oklch(0.75 0.18 70);               /* Elegant Amber */
+  --border: oklch(0.98 0.01 270 / 12%);
+  --input: oklch(0.98 0.01 270 / 15%);
+  --ring: oklch(0.62 0.20 255 / 50%);
+  --chart-1: oklch(0.62 0.20 255);
+  --chart-2: oklch(0.65 0.15 210);
+  --chart-3: oklch(0.75 0.18 70);
+  --chart-4: oklch(0.60 0.20 20);
+  --chart-5: oklch(0.70 0.15 300);              /* Magenta/Purple accent */
+  --sidebar: oklch(0.15 0.02 270);
+  --sidebar-foreground: oklch(0.98 0.01 270);
+  --sidebar-primary: oklch(0.62 0.20 255);
+  --sidebar-primary-foreground: oklch(0.98 0.01 270);
+  --sidebar-accent: oklch(0.24 0.03 270);
+  --sidebar-accent-foreground: oklch(0.98 0.01 270);
+  --sidebar-border: oklch(0.98 0.01 270 / 10%);
+  --sidebar-ring: oklch(0.62 0.20 255 / 50%);
+
+  --gradient-hero: radial-gradient(ellipse at top, oklch(0.62 0.20 255 / 0.20), transparent 70%);
+  --gradient-primary: linear-gradient(135deg, oklch(0.65 0.15 210), oklch(0.62 0.20 255));
+  --glow-primary: 0 0 60px oklch(0.62 0.20 255 / 0.40);
+  --shadow-card: 0 10px 40px oklch(0 0 0 / 0.5);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@utility glass {
+  background: color-mix(in oklab, var(--card) 70%, transparent);
+  backdrop-filter: blur(16px);
+  border: 1px solid color-mix(in oklab, white 8%, transparent);
+}
+
+@utility glow {
+  box-shadow: var(--glow-primary);
+}
+
+@utility text-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #9CA3AF 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility text-gradient-primary {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 oklch(0.78 0.20 154 / 0.5); }
+  50% { box-shadow: 0 0 30px 8px oklch(0.78 0.20 154 / 0.15); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@utility animate-pulse-glow { animation: pulse-glow 2.5s ease-in-out infinite; }
+@utility animate-float { animation: float 6s ease-in-out infinite; }
+
+/* grid background */
+@utility bg-grid {
+  background-image:
+    linear-gradient(to right, oklch(1 0 0 / 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, oklch(1 0 0 / 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
