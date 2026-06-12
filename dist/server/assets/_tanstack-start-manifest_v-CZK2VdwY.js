@@ -1,0 +1,4 @@
+const tsrStartManifest = () => ({ routes: { __root__: { filePath: "/home/timatias/protegercidadao/src/routes/__root.tsx", children: ["/", "/dashboard", "/denuncias"], preloads: ["/assets/index-C4KCiiio.js"], scripts: [{ attrs: { type: "module", async: true, src: "/assets/index-C4KCiiio.js" } }] }, "/": { filePath: "/home/timatias/protegercidadao/src/routes/index.tsx", children: void 0, preloads: ["/assets/index-CMdsy5rY.js", "/assets/proxy-1cVi6I7r.js", "/assets/index-D6sjzgkg.js", "/assets/users-DapUP6yA.js"] }, "/dashboard": { filePath: "/home/timatias/protegercidadao/src/routes/dashboard.tsx", children: void 0, preloads: ["/assets/dashboard-y5d6ASIE.js", "/assets/proxy-1cVi6I7r.js", "/assets/users-DapUP6yA.js"] }, "/denuncias": { filePath: "/home/timatias/protegercidadao/src/routes/denuncias.tsx", children: void 0, preloads: ["/assets/denuncias-BRIhBO5D.js", "/assets/proxy-1cVi6I7r.js", "/assets/index-D6sjzgkg.js"] } } });
+export {
+  tsrStartManifest
+};
